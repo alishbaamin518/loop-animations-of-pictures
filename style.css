@@ -1,0 +1,71 @@
+@import url(font.css);
+.banner{
+/* background: linear-gradient(320deg, rgba(48, 179, 150, 1) 0%, rgba(121, 219, 139, 1) 25%, rgba(145, 87, 145, 1) 47%, rgba(121, 219, 139, 1) 78%, rgba(252, 70, 107, 1) 100%); */
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+position: absolute;
+width: 200px;
+height: 250px;
+margin-top: 10%;
+left: calc(50% - 100px);
+transform-style: preserve-3d;
+transform:perspective(1000px);
+animation: autoRun 28s linear infinite;
+z-index: 2;
+}
+@keyframes autoRun{
+    form{
+     transform:perspective(1000px) rotateX(-16deg) rotateY(0deg);
+}to{
+   transform:perspective(1000px) rotateX(-16deg) rotateY(360deg); 
+}
+} 
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0; 
+    transform:
+    rotateY( calc((var(--position) - 1)*(360/var(--quantity))* 1deg ) )
+    translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.banner .content{
+    /* background-color: blue; */
+    position: absolute;
+    bottom: -60px;
+    transform: translateX(-50%);
+    margin-left: 30%;
+    line-height: 300%;
+     font-weight: bold;
+     color: cadetblue;
+     z-index: 2;
+}
+.banner .content {
+  font-family: "Anton", sans-serif;
+  font-style: normal;
+  font-size: xxx-large;
+  -webkit-text-stroke: 2px rgb(110, 241, 59);
+  color: transparent;
+  color: rgba(156, 7, 111, 0.441);
+}
+.model{
+    background-image: url(imagesofflower/ks-kyung-7Qg3KdiWON8-unsplash-removebg-preview.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background-size: auto 150%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
